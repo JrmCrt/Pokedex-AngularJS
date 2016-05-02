@@ -32,7 +32,7 @@ p{
 nav a{
 	color: white;
 	float: right;
-	margin-right: 20px;
+	margin-right: 50px;
 	border: 1px solid transparent;
 	padding: 5px;
 	transition: all 0.2s;
@@ -152,9 +152,24 @@ h2{
     margin-left: auto;
     margin-right: auto;
 }
-#pokeInfo a{
+#pokeInfo a, .favorites a{
 	color: grey;
 }
-#pokeInfo a:hover{
+#pokeInfo a:hover, .favorites a:hover{
 	color: rgb(239, 72, 54);
+}
+.favorites a{
+	font-size: 1.5em;
+
+}
+.favorites:first-letter {
+    text-transform: uppercase;
+}
+.favorites{
+	text-align: center;
+	margin: 10px 20px 10px 0px;
+	border: 1px solid rgb(218, 223, 225);
+	float: left;
+	padding: 10px;
+	width: 210px; 
 }

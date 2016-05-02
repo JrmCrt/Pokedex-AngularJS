@@ -1,7 +1,8 @@
 
 <h2>Favorites</h2>
 
-<div id="favorites" >
-
+<div class="favorites" ng-repeat="f in fav">
+   <a href="{{f.link}}">{{f.name}}</a>
+   <img src="{{f.sprite}}" alt="sprite"/>
 </div>
 
