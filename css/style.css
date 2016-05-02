@@ -32,9 +32,9 @@ p{
 nav a{
 	color: white;
 	float: right;
-	margin-right: 50px;
+	margin-right: 	50px;
 	border: 1px solid transparent;
-	padding: 5px;
+	padding: 7px;
 	transition: all 0.2s;
 	border: 1px solid white;
 }
