@@ -2,30 +2,31 @@
 
 body{
 	font-family: "Montserrat", "Noto Sans", Helvetica, sans-serif;
-	overflow-x: hidden;
+	overflow: hidden;
 	width: 100%;
+	height: 100%
 	margin: 0;
 }
 header{
 	width: 100%;
-	height: 150px;
+	height: 12vh;
 	background-color: rgb(239, 72, 54); /*red*/
 }
-h1 {
+h1{
 	display: inline;
 }
-h1 a {
+h1 a{
 	color: white;
 	font-size: 1.2em;
 	position: relative;
 	top: 25px;
 	left: 20px;
 }
-a {
+a{
 	text-decoration: none;
 	color: black;
 }
-p {
+p{
 	text-align: center;
 }
 nav a{
@@ -52,18 +53,19 @@ main {
 }
 #content {
 	background-color: white;
-	height: 700px;
+	height: 78vh;
+	overflow: auto;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 5%;
 	padding-right: 5%;
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding-top: 1%;
+	padding-bottom: 1%;
 }
 footer{
 	background-color: #e74c3c;
-	height: 60px;
+	height: 6vh;
 }
 footer section{
 	float: left;
@@ -79,39 +81,6 @@ footer section, footer a{
 footer a{
 	top: 13px;
 }
-th{
-	background-color: #e74c3c;
-	color: white;
-	padding: 5px;
-	text-align: center;
-}
-td{
-	padding: 5px;
-	vertical-align: middle;
-	text-align: center;
-}
-table{
-	margin-left: auto;
-	margin-right: auto;	
-	margin-top: 10px;
-}
-table a i:hover{
-	color: #e74c3c;
-}
-table img{
-	height: 100px; 
-	max-width: 77px;
-}
-tr:nth-child(odd){
-	background-color: rgb(218, 223, 225);
-}
-
-tr:nth-child(even) {
-	background-color: white;
-}
-tr:hover{
-	background-color: rgb(228, 241, 254);
-}
 label
 {
 	display: block;
@@ -123,12 +92,6 @@ img{
 }
 a.profile:hover{
 	color : #e74c3c;
-}
-aside{
-	float: left;
-	width: 300px;
-	height: 890px;
-	background-color: rgb(218, 223, 225);
 }
 input{
   display: block;
@@ -165,27 +128,33 @@ input:focus {
 	display: inline-block;
     transform: rotate(360deg);
 }
+.button.favorite{
+	position: relative;
+	top: -10px;
+	float: right;
+}
 h2{
 	margin-top: 50px;
-	color: rgb(239, 72, 54);
 	color: grey;
-}
-#pokeInfo{
-	/*text-align: center;*/
-	float: left;
 }
 #pokeInfo p{
 	text-align: left;
+	margin-top: 5px;
 }
 #pokeInfo #sprite{
-	margin: 10px 0px 10px 0px;
+	margin: 10px 20px 10px 0px;
 	border: 1px solid rgb(218, 223, 225);
-}
-#loader{
+	float: left;
 }
 #loader img{
 	width: 30%;
 	display: block;
     margin-left: auto;
     margin-right: auto;
+}
+#pokeInfo a{
+	color: grey;
+}
+#pokeInfo a:hover{
+	color: rgb(239, 72, 54);
 }

@@ -5,9 +5,17 @@
     <p ng-show="data.description">{{data.description}}</p>
     <p ng-show="data.height">{{data.height + " m"}}</p>
     <p ng-show="data.weight">{{data.weight + " kg"}}</p>
-    <p ng-show="data.types">{{"Type(s) : " + data.types}}</p>
+    <p ng-show="data.types">{{"Type(s) : " + data.types + "."}}</p>
+    <p ng-show="data.ability">{{"Abilities : " + data.ability + "."}}</p>
+    <p ng-show="data.attack">{{"Attacks : " + data.attack + "."}}</p>
+    <p id="stat" ng-show="data.stat">
+        Stats :
+        <p ng-show="data.stat" ng-repeat="stat in data.stat">{{stat}}</p>
+    </p>
 
-</div>               
+    <p><span class='button favorite' ng-show="data.stat" ng-click="favorite()">Add to favorties <i class="icon-heart"></i></span></p>
+</div> 
+              
 <div id="loader" ng-hide="hide">
     <img src="loadingCircle.gif" alt="loader" />
 </div>
