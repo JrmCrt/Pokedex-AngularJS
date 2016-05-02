@@ -160,16 +160,22 @@ h2{
 }
 .favorites a{
 	font-size: 1.5em;
-
-}
-.favorites:first-letter {
-    text-transform: uppercase;
+	font-weight: bold;
 }
 .favorites{
 	text-align: center;
-	margin: 10px 20px 10px 0px;
+	margin: 30px 20px 10px 0px;
 	border: 1px solid rgb(218, 223, 225);
 	float: left;
 	padding: 10px;
 	width: 210px; 
+	transition: transform 0.25s;
 }
+.favorites:hover{
+	background-color: rgb(218, 223, 225);
+	color: rgb(239, 72, 54);
+	transform: scale(1.1);
+}
+/*.favorites:first-letter {
+		text-transform: uppercase;
+}*/
