@@ -9,7 +9,6 @@ app.controller('pokemonCtrl', ['$scope', '$location', function($scope, $location
         $location.path('/pokemon/' + $scope.id.toLowerCase());
     }
 
-    //localStorage.removeItem("favorites");
 }]);
 
 app.controller('detailsCtrl', ['$scope', '$location', '$routeParams', function($scope, $location, $routeParams) {
@@ -82,7 +81,18 @@ app.controller('detailsCtrl', ['$scope', '$location', '$routeParams', function($
         });
 
     $scope.favorite = function() {
+
+        favorites = JSON.parse(localStorage.getItem("favorites"))
+
+        for (var i = 0; i < favorites.length; i++) {
+            if (favorites[i].name == info.name)
+            {
+                return $scope.favDouble= true;
+            }
+        }
+
         $location.path('/favorites');
+
         if(localStorage.getItem('favorites') === null)
         {
             var fav = [info];
@@ -95,7 +105,11 @@ app.controller('detailsCtrl', ['$scope', '$location', '$routeParams', function($
             fav.push(info);
             localStorage.setItem('favorites', JSON.stringify(fav));
         }
-    }    
+    } 
+
+    $scope.hideInfo = function(obj, $event) {
+        $scope.info = true;
+    }       
 
 }]);
 
@@ -103,6 +117,7 @@ app.controller('favoritesCtrl', ['$scope', '$location', function($scope, $locati
 
     favorites = JSON.parse(localStorage.getItem("favorites"));
     
+    $scope.fav = favorites;
     $scope.fav = favorites;  
 
     $scope.deleteFav = function() {
@@ -120,7 +135,8 @@ app.controller('favoritesCtrl', ['$scope', '$location', function($scope, $locati
                 localStorage.setItem('favorites', JSON.stringify(favorites));
             }
         }
-    }      
+    }
+  
 
 }]);
 
