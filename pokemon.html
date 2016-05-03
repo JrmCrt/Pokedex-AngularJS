@@ -1,6 +1,6 @@
 
 <div id="pokeInfo" >
-    <h2 ng-show"data.name">{{data.name[0].toUpperCase() + data.name.substring(1, data.name.length)}}</h2>
+    <h2 ng-show"data.name">{{data.name | ucfirst}}</h2>
     <img id="sprite" ng-show="data.sprite" src="{{data.sprite}}" alt="sprite">
     <p ng-show="data.description">{{data.description}}</p>
     <p ng-show="data.height">{{data.height + " m"}}</p>

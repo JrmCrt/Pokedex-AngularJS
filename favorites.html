@@ -2,7 +2,11 @@
 <h2>Favorites</h2>
 
 <div class="favorites" ng-repeat="f in fav">
-   <a href="{{f.link}}">{{f.name[0].toUpperCase() + f.name.substring(1, f.name.length)}}</a>
-   <a href="{{f.link}}"><img src="{{f.sprite}}" alt="sprite"/></a>
+   <a ng-href="#/pokemon/{{f.name}}">{{f.name | ucfirst}}</a>
+   <a ng-href="#/pokemon/{{f.name}}"><img src="{{f.sprite}}" alt="sprite"/></a>
+   <span class="button deleteOne"  ng-click="deleteOne()"><i class="icon-trash" data-name="{{f.name}}"></i></span>
 </div>
+
+<span class="button delete" ng-click="deleteFav()">Delete all favorites <i class="icon-trash"></i></span>
+
 

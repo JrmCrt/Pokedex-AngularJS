@@ -85,7 +85,6 @@ app.controller('detailsCtrl', ['$scope', '$location', '$routeParams', function($
         $location.path('/favorites');
         if(localStorage.getItem('favorites') === null)
         {
-            console.log('no fav');
             var fav = [info];
             localStorage.setItem('favorites', JSON.stringify(fav));
             var storedP = JSON.parse(localStorage.getItem("favorites"));
@@ -94,11 +93,6 @@ app.controller('detailsCtrl', ['$scope', '$location', '$routeParams', function($
         {
             var fav = JSON.parse(localStorage.getItem("favorites"));
             fav.push(info);
-            if(fav.length > 6)
-            {
-                console.log(">6");
-                fav.shift();
-            }
             localStorage.setItem('favorites', JSON.stringify(fav));
         }
     }    
@@ -109,7 +103,24 @@ app.controller('favoritesCtrl', ['$scope', '$location', function($scope, $locati
 
     favorites = JSON.parse(localStorage.getItem("favorites"));
     
-    $scope.fav = favorites;        
+    $scope.fav = favorites;  
+
+    $scope.deleteFav = function() {
+        localStorage.removeItem('favorites');
+        $scope.fav = JSON.parse(localStorage.getItem("favorites"));
+    }
+    
+    $scope.deleteOne = function(obj, $event){
+        var name = event.target.getAttribute("data-name");
+        for (var i = 0; i < favorites.length; i++) {
+            if (favorites[i].name == name)
+            {
+                favorites.splice(i, 1);
+                console.log(favorites);
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+            }
+        }
+    }      
 
 }]);
 
@@ -133,5 +144,13 @@ app.config(['$routeProvider',
       });
   }]);
 
+app.filter('ucfirst', function() { 
+  return function(string) {
+    if(string)
+    {
+        return string[0].toUpperCase() + string.substr(1).toLowerCase();
+    }
+  }
+});
 
 })();

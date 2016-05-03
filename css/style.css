@@ -32,7 +32,7 @@ p{
 nav a{
 	color: white;
 	float: right;
-	margin-right: 	50px;
+	margin-right: 20px;
 	border: 1px solid transparent;
 	padding: 7px;
 	transition: all 0.2s;
@@ -176,6 +176,16 @@ h2{
 	color: rgb(239, 72, 54);
 	transform: scale(1.1);
 }
-/*.favorites:first-letter {
-		text-transform: uppercase;
-}*/
+.button.delete{
+	position: relative;
+	top: 20px;
+}
+.button.deleteOne{
+	font-size: 1em;
+	padding: 2px;
+}
+@media screen and (max-width: 1000px) {
+  #content{
+  	width: 100%;
+  }
+}
