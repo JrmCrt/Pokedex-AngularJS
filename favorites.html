@@ -1,7 +1,7 @@
 
 <h2>Favorites</h2>
 
-<div class="favorites" ng-repeat="f in fav">
+<div class="favorites" ng-show="fav" ng-repeat="f in fav">
    <a ng-href="#/pokemon/{{f.name}}">{{f.name | ucfirst}}</a>
    <a ng-href="#/pokemon/{{f.name}}"><img src="{{f.sprite}}" alt="sprite"/></a>
    <span class="button deleteOne"  ng-click="deleteOne()"><i class="icon-trash" data-name="{{f.name}}"></i></span>

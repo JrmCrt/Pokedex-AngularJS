@@ -67,7 +67,7 @@ app.controller('detailsCtrl', ['$scope', '$location', '$routeParams', function($
                         obj = obj['evolves_to'][0];
                     }
 
-                    $("#pokeInfo").append('<p> Evolution(s) : ' + info.evolution.join(', ') + '.</p>');
+                    $("#pokeInfo").append('<p> <span class="type">Evolution(s) : </span>' + info.evolution.join(', ') + '.</p>');
                     info.done = true;    
                 });
 

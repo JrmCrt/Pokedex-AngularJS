@@ -185,14 +185,15 @@ h2{
 	padding: 2px;
 }
 #popup{
-	background-color: rgb(239, 72, 54);
+	background-color: rgb(218, 223, 225);
 	width: 350px;
 	height: 60px;
 	position: absolute;
 	left: 45%;
 	top: 45%;
 	vertical-align: middle;
-	color: white;
+	color: rgb(239, 72, 54);
+	border: 1px solid rgb(218, 223, 225);
 }
 #popup p{
 	vertical-align: middle;
@@ -202,6 +203,13 @@ h2{
 	float: right;
 	padding: 3px;
 	cursor: pointer;
+	transition: transform 0.25s;
+}
+#popup .icon-cancel-circled:hover{
+	transform: rotate(360deg);
+}
+.type{
+	color: gray;
 }
 @media screen and (max-width: 1000px) {
   #content{

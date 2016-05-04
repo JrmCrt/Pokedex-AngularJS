@@ -3,15 +3,16 @@
     <h2 ng-show"data.name">{{data.name | ucfirst}}</h2>
     <img id="sprite" ng-show="data.sprite" src="{{data.sprite}}" alt="sprite">
     <p ng-show="data.description">{{data.description}}</p>
-    <p ng-show="data.height">{{data.height + " m"}}</p>
-    <p ng-show="data.weight">{{data.weight + " kg"}}</p>
-    <p ng-show="data.types">{{"Type(s) : " + data.types + "."}}</p>
-    <p ng-show="data.ability">{{"Abilities : " + data.ability + "."}}</p>
-    <p ng-show="data.attack">{{"Attacks : " + data.attack + "."}}</p>
+    <p ng-show="data.height"><span class="type" >Height :</span> {{data.height}} m</p>
+    <p ng-show="data.weight"><span class="type" >Weight :</span> {{data.weight}} kg</p>
+    <p ng-show="data.types"><span class="type" >Types :</span> {{data.types}} .</p>
+    <p ng-show="data.ability"><span class="type" >Abilitiers :</span> {{data.ability}} .</p>
+    <p ng-show="data.attack"><span class="type" >Attacks :</span> {{data.attack}} .</p>
     <p id="stat" ng-show="data.stat">
-        Stats :
+        <span class="type" >Stats :</span>
         <p ng-show="data.stat" ng-repeat="stat in data.stat">{{stat}}</p>
     </p>
+    <p ng-show="data.stat" ng-repeat="evo in data.evolution">Evolutions : {{evo}}</p>
 
     <p><span class='button favorite' ng-show="data.stat" ng-click="favorite()">Add to favorties <i class="icon-heart"></i></span></p>
 </div> 
@@ -22,6 +23,6 @@
 
 <div id="popup" ng-show="favDouble && !info"  ng-click="hideInfo()">
     <i class="icon-cancel-circled"></i>    
-    <p><i class="icon-trash"></i> Pokemon already in favorites ! </p>
+    <p><i class="icon-info"></i> Pokemon already in favorites ! </p>
 </div>
 
