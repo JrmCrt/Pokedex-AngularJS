@@ -82,12 +82,12 @@ app.controller('detailsCtrl', ['$scope', '$location', '$routeParams', function($
 
     $scope.favorite = function() {
 
-        favorites = JSON.parse(localStorage.getItem("favorites"))
+        var favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
         for (var i = 0; i < favorites.length; i++) {
             if (favorites[i].name == info.name)
             {
-                return $scope.favDouble= true;
+                return $scope.favDouble = true;
             }
         }
 
@@ -148,7 +148,6 @@ app.config(['$routeProvider',
         controller: 'detailsCtrl'
       }).
       when('/', {
-        templateUrl: 'home.html',
         controller: 'pokemonCtrl'
       }).
       when('/favorites', {
@@ -161,12 +160,12 @@ app.config(['$routeProvider',
   }]);
 
 app.filter('ucfirst', function() { 
-  return function(string) {
-    if(string)
-    {
-        return string[0].toUpperCase() + string.substr(1).toLowerCase();
+    return function(string) {
+        if(string)
+        {
+            return string[0].toUpperCase() + string.substr(1).toLowerCase();
+        }
     }
-  }
 });
 
 })();

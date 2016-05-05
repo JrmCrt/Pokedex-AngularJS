@@ -1,6 +1,6 @@
 
 <div id="pokeInfo" >
-    <h2 ng-show"data.name">{{data.name | ucfirst}}</h2>
+    <h2 ng-show="data.name">{{data.name | ucfirst}}</h2>
     <img id="sprite" ng-show="data.sprite" src="{{data.sprite}}" alt="sprite">
     <p ng-show="data.description">{{data.description}}</p>
     <p ng-show="data.height"><span class="type" >Height :</span> {{data.height}} m</p>
@@ -10,7 +10,9 @@
     <p ng-show="data.attack"><span class="type" >Attacks :</span> {{data.attack}} .</p>
     <p id="stat" ng-show="data.stat">
         <span class="type" >Stats :</span>
-        <p ng-show="data.stat" ng-repeat="stat in data.stat">{{stat}}</p>
+        <p ng-show="data.stat" ng-repeat="stat in data.stat"> 
+            <span class="type">{{stat.split(':')[0] | ucfirst}} </span> : {{ stat.split(':')[1] }}
+        </p>
     </p>
 
     <p><span class='button favorite' ng-show="data.stat" ng-click="favorite()">Add to favorties <i class="icon-heart"></i></span></p>
@@ -22,6 +24,6 @@
 
 <div id="popup" ng-show="favDouble && !info"  ng-click="hideInfo()">
     <i class="icon-cancel-circled"></i>    
-    <p><i class="icon-info"></i> Pokemon already in favorites ! </p>
+    <p><i class="icon-info-circled"></i> Pokemon already in favorites ! </p>
 </div>
 
