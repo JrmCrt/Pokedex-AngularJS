@@ -65,7 +65,7 @@ main {
 }
 footer{
 	background-color: #e74c3c;
-	height: 6vh;
+	height: 7vh;
 }
 footer section{
 	float: left;
@@ -184,7 +184,7 @@ h2{
 	font-size: 1em;
 	padding: 2px;
 }
-#popup{
+.popup{
 	background-color: rgb(218, 223, 225);
 	width: 350px;
 	height: 60px;
@@ -195,22 +195,36 @@ h2{
 	color: rgb(239, 72, 54);
 	border: 1px solid rgb(218, 223, 225);
 }
-#popup p{
+.popup p{
 	vertical-align: middle;
 	margin-top: 20px;
 }
-#popup .icon-cancel-circled{
+.popup .icon-cancel-circled{
 	float: right;
 	padding: 3px;
 	cursor: pointer;
 	transition: transform 0.25s;
 }
-#popup .icon-cancel-circled:hover{
+.popup .icon-cancel-circled:hover{
 	transform: rotate(360deg);
 }
 .type{
 	color: gray;
 }
+.navIcon{
+	color: rgb(239, 72, 54);
+	font-size: 1.3em;
+}
+.navIcon:hover{
+	color: gray;
+}
+.navIcon.left{
+	float: left;
+}
+.navIcon.right{
+	float: right;
+}
+
 @media screen and (max-width: 1000px) {
   #content{
   	width: 100%;

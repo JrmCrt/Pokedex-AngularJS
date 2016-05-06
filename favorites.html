@@ -4,7 +4,7 @@
 <div class="favorites" ng-show="fav" ng-repeat="f in fav">
    <a ng-href="#/pokemon/{{f.name}}">{{f.name | ucfirst}}</a>
    <a ng-href="#/pokemon/{{f.name}}"><img src="{{f.sprite}}" alt="sprite"/></a>
-   <span class="button deleteOne"  ng-click="deleteOne()"><i class="icon-trash" data-name="{{f.name}}"></i></span>
+   <span class="button deleteOne"  ng-click="deleteOne(f.name)"><i class="icon-trash"></i></span>
 </div>
 
 <span class="button delete" ng-click="deleteFav()">Delete all favorites <i class="icon-trash"></i></span>

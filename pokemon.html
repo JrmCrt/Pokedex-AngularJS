@@ -1,3 +1,7 @@
+<div class="iconWrap">
+    <a class="navIcon left" ng-show="data.id > 1" ng-href="#/pokemon/{{data.id - 1}}" title="Previous pokemon"><i class="icon-angle-circled-left"></i></a>
+    <a class="navIcon right" ng-show="data.id < 721" ng-href="#/pokemon/{{data.id + 1}}" title="Next pokemon"><i class="icon-angle-circled-right"></i></a>
+</div>
 
 <div id="pokeInfo" >
     <h2 ng-show="data.name">{{data.name | ucfirst}}</h2>
@@ -17,13 +21,17 @@
 
     <p><span class='button favorite' ng-show="data.stat" ng-click="favorite()">Add to favorties <i class="icon-heart"></i></span></p>
 </div> 
-              
-<div id="loader" ng-hide="hide">
+
+<div id="loader" ng-hide="hide || notFound">
     <img src="loadingCircle.gif" alt="loader" />
 </div>
 
-<div id="popup" ng-show="favDouble && !info"  ng-click="hideInfo()">
+<div class="popup" ng-show="favDouble && !info"  ng-click="hideInfo()">
     <i class="icon-cancel-circled"></i>    
     <p><i class="icon-info-circled"></i> Pokemon already in favorites ! </p>
 </div>
 
+<div class="popup" ng-show="notFound" ng-click="hideNotFound()">
+    <i class="icon-cancel-circled"></i>    
+    <p><i class="icon-info-circled"></i> Nothing found ! </p>
+</div>
