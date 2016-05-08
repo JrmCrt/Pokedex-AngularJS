@@ -29,7 +29,6 @@ app.controller('detailsCtrl', ['$scope', '$location', '$routeParams', function($
     }
 
     if(inCache($routeParams.id) !== false){
-        console.log($routeParams.id + ' in cache');
         info = inCache($routeParams.id);
         $scope.data = info;
         $scope.hide = true;
@@ -39,7 +38,6 @@ app.controller('detailsCtrl', ['$scope', '$location', '$routeParams', function($
         $("#pokeInfo").append('<p> <span class="type">Evolution(s) : </span>' + info.evolution.join(', ') + '.</p>');
     }
     else{
-        console.log($routeParams.id + ' not in cache');
         $.getJSON('http://pokeapi.co/api/v2/pokemon/'+pokemonId+'/',function(data){
                 info.name = data.name;
                 info.id = data.id;

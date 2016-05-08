@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="app">
+<html lang="en" data-ng-app="app">
 <head>
   <meta charset="utf-8">
   <title>My Pokedex | {{ $root.title | ucfirst}}</title>
@@ -12,15 +12,15 @@
     <header>  
         <h1><a href='#'>My Pokedex</a></h1>  
         <nav>
-            <a ng-href="#/favorites" title="favorites">Favorites <i class="icon-heart"></i></a>
+            <a data-ng-href="#/favorites" title="favorites">Favorites <i class="icon-heart"></i></a>
         </nav>
     </header>
     <main>
         <section id='content'>
-            <input type="text" ng-model="id" id="input" autofocus placeholder="Type a pokemon's name or id">
+            <input type="text" data-ng-model="id" id="input" autofocus placeholder="Type a pokemon's name or id">
             <br/>
-            <span class='button submit' ng-controller="pokemonCtrl" ng-click="click()">Submit <i class="icon-ok"></i></span>
-        <div ng-view ng-controller="pokemonCtrl">    
+            <span class='button submit' data-ng-controller="pokemonCtrl" data-ng-click="click()">Submit <i class="icon-ok"></i></span>
+        <div data-ng-view data-ng-controller="pokemonCtrl">    
          
         </div>    
         </section>
