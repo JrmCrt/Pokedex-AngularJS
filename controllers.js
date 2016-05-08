@@ -34,7 +34,6 @@ app.controller('detailsCtrl', ['$scope', '$location', '$routeParams', function($
         $scope.hide = true;
         $scope.json = $scope.data;
         $scope.$root.title = info.name;
-        console.log(info);
         $("#pokeInfo").append('<p> <span class="type">Evolution(s) : </span>' + info.evolution.join(', ') + '.</p>');
     }
     else{
@@ -93,7 +92,6 @@ app.controller('detailsCtrl', ['$scope', '$location', '$routeParams', function($
                         info.done = true;    
                     
                     }).done(function(){
-                        console.log(info);
                         console.log(cache);
                         cache.push(info);
                         localStorage.setItem('cache', JSON.stringify(cache));
